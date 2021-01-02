@@ -2,7 +2,7 @@ needs ./termcommon.f
 needs ./termstate.f
 
 \ Set the visibility of the terminal cursor.
-: cursor-visible  ( b1 -- )  esc ." [?25" if [char] h emit else [char] l emit then ;
+: cursor-visible  ( b1 -- )  esc ." [?25" if 'h emit else 'l emit then ;
 
 : term-reset  ( -- )  
     (reset-colors)
@@ -17,22 +17,22 @@ needs ./termstate.f
 : term-underline-off  ( -- )  esc ." [24m" ;
 
 : term-cursor-up  ( n1 -- ) 
-    esc ." [" .. ." A" ;
+    esc ." [" .. 'A emit ;
 
 : term-cursor-down  ( n1 -- ) 
-    esc ." [" .. ." B" ;
+    esc ." [" .. 'B emit ;
 
 : term-cursor-forward  ( n1 -- ) 
-    esc ." [" .. ." C" ;
+    esc ." [" .. 'C emit ;
 
 : term-cursor-back  ( n1 -- ) 
-    esc ." [" .. ." D" ;
+    esc ." [" .. 'D emit ;
 
 : term-scroll-up  ( n1 -- ) 
-    esc ." [" .. ." S" ;
+    esc ." [" .. 'S emit ;
 
 : term-scroll-down  ( n1 -- ) 
-    esc ." [" .. ." T" ;
+    esc ." [" .. 'T emit ;
 
 : term-erase-to-end-of-line ( -- ) 
     esc ." [K" ;
