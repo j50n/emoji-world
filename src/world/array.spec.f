@@ -1,6 +1,7 @@
 needs ./array.f
+needs ../term/term.f
 
-." TESTS FOR ARRAY.F (WORLD ARRAYS)" cr
+{b} ." TESTS FOR ARRAY.F (WORLD ARRAYS)"  {r} cr
 
 create w1 5 3 cell world-allot
 
@@ -38,5 +39,3 @@ create w1 5 3 cell world-allot
 load-world
 print-world
 check-values
-
-

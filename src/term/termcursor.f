@@ -8,13 +8,21 @@ needs ./termstate.f
     (reset-colors)
     esc ." [0m" ;
 
+: {r}  ( -- ) term-reset ;
+
 : term-bold-on  ( -- )  esc ." [1m" ;
 
 : term-bold-off  ( -- )  esc ." [21m" ;
 
+: {b}   ( -- )  term-bold-on ;
+: {/b}  ( -- )  term-bold-off ;
+
 : term-underline-on  ( -- )  esc ." [4m" ;
 
 : term-underline-off  ( -- )  esc ." [24m" ;
+
+: {u}   ( -- )  term-underline-on ;
+: {/u}  ( -- )  term-underline-off ;
 
 : term-cursor-up  ( n1 -- ) 
     esc ." [" .. 'A emit ;
