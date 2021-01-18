@@ -1,8 +1,12 @@
 \ place-geographic
 
 : em-snow-capped-mountain  ( -- )  $1F3D4 xemit ;
-: em-mountain              ( -- )  $26F0 xemit ;
+: em-mountain              ( -- )  $26F0 xemit space ;
 : em-volcano               ( -- )  $1F30B xemit ;
+: em-water-wave            ( -- )  $1F30A xemit ;
+
+: em-cactus                ( -- )  $1F335 xemit ;
+: em-palm-tree             ( -- )  $1F334 xemit ;
 
 \ sky and weather
 

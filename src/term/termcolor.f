@@ -78,3 +78,9 @@ needs ./termstate.f
 : {whi}  ( -- )  term-white .fg ;
 
 : {rst}  ( -- )  term-colors-reset ;
+
+#39 constant term-ocean-blue6
+
+#88 constant term-brown6  
+
+#220 constant term-desert-tan6
